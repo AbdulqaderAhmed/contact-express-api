@@ -1,5 +1,15 @@
 import Contact from "../models/contactModel.js";
 
+/**
+ * The function `getContacts` retrieves all contacts from the database and sends them as a JSON
+ * response, or sends an error message if there is an error.
+ * @param req - The `req` parameter is the request object, which contains information about the
+ * incoming HTTP request, such as the request headers, request body, and request parameters. It is used
+ * to retrieve data from the client-side and pass it to the server-side.
+ * @param res - The `res` parameter is the response object that is used to send the response back to
+ * the client. It has methods like `status()` to set the HTTP status code, `json()` to send a JSON
+ * response, and `send()` to send a plain text response.
+ */
 const getContacts = async (req, res) => {
   try {
     const contacts = await Contact.find();
